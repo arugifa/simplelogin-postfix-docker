@@ -1,0 +1,10 @@
+# postgres config
+hosts = {{ env['DB_HOST'] }}
+user = {{ env['DB_USER'] }}
+password = {{ env['DB_PASSWORD'] }}
+dbname = {{ env['DB_NAME'] }}
+
+# forward to smtp:{{ env['EMAIL_HANDLER_HOST'] }}:20381 for custom domain AND email domain
+query = SELECT 'smtp:{{ env["EMAIL_HANDLER_HOST"] }}:20381' FROM custom_domain WHERE domain = '%s' AND verified=true
+    UNION SELECT 'smtp:{{ env["EMAIL_HANDLER_HOST"] }}:20381' WHERE '%s' = '{{ env["ALIASES_DOMAIN"] }}' LIMIT 1;
+

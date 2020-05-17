@@ -1,0 +1,9 @@
+# postgres config
+hosts = {{ env['DB_HOST'] }}
+user = {{ env['DB_USER'] }}
+password = {{ env['DB_PASSWORD'] }}
+dbname = {{ env['DB_NAME'] }}
+
+query = SELECT domain FROM custom_domain WHERE domain='%s' AND verified=true
+    UNION SELECT '%s' WHERE '%s' = '{{ env["ALIASES_DOMAIN"] }}' LIMIT 1;
+
