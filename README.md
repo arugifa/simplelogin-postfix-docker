@@ -1,6 +1,9 @@
 # Docker Image for SimpleLogin Postfix
 
-**WARNING: This is Work In Progress. Don't use it on PROD yet!!**
+**STATUS: This image is still very new, and several things have to be done
+before considering it stable. One example among others: there is no support yet
+for TLS. However, I use this image in Production, and will make improvements
+over time. Stay tuned!**
 
 No official Postfix image, tailor-made for [SimpleLogin](https://simplelogin.io/),
 currently exists.
