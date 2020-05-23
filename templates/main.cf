@@ -1,6 +1,9 @@
 # POSTFIX config file, adapted for SimpleLogin
-smtpd_banner = $myhostname ESMTP $mail_name (Alpine)
+smtpd_banner = $myhostname ESMTP $mail_name
 biff = no
+
+# Redirect logs to stdout.
+maillog_file = /dev/stdout
 
 # appending .domain is the MUA's job.
 append_dot_mydomain = no
