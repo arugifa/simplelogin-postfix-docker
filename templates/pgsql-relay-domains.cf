@@ -5,5 +5,5 @@ password = {{ env['DB_PASSWORD'] }}
 dbname = {{ env['DB_NAME'] }}
 
 query = SELECT domain FROM custom_domain WHERE domain='%s' AND verified=true
-    UNION SELECT '%s' WHERE '%s' = '{{ env["ALIASES_DOMAIN"] }}' LIMIT 1;
+    UNION SELECT '%s' WHERE '%s' = '{{ env["ALIASES_DEFAULT_DOMAIN"] }}' LIMIT 1;
 

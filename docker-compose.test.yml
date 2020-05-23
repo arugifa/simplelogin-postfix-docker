@@ -4,13 +4,13 @@ services:
   simplelogin-postfix:
     build: .
     environment:
-      ALIASES_DOMAIN: mydomain.com
+      ALIASES_DEFAULT_DOMAIN: mydomain.com
       DB_HOST: localhost
       DB_USER: myuser
       DB_PASSWORD: mypassword
       DB_NAME: simplelogin
       EMAIL_HANDLER_HOST: 127.0.0.1
-      SIMPLELOGIN_HOST: app.mydomain.com
+      POSTFIX_FQDN: mail.mydomain.com
 
   sut:
     image: alpine:latest

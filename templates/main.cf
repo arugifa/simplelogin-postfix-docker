@@ -2,7 +2,7 @@
 smtpd_banner = $myhostname ESMTP $mail_name
 biff = no
 
-# Redirect logs to stdout.
+# Redirect logs to stdout (better with Docker).
 maillog_file = /dev/stdout
 
 # appending .domain is the MUA's job.
@@ -28,13 +28,15 @@ smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
 # information on enabling SSL in the smtp client.
 
 alias_maps = hash:/etc/aliases
+
+# Allow containers on the same private network to send emails via Postfix.
 mynetworks_style = subnet
 
 # Set your domain here
 mydestination =
-myhostname = {{ env['SIMPLELOGIN_HOST'] }}
-mydomain = {{ env['ALIASES_DOMAIN'] }}
-myorigin = {{ env['ALIASES_DOMAIN'] }}
+myhostname = {{ env['POSTFIX_FQDN'] }}
+mydomain = {{ env['ALIASES_DEFAULT_DOMAIN'] }}
+myorigin = {{ env['ALIASES_DEFAULT_DOMAIN'] }}
 
 relay_domains = pgsql:/etc/postfix/pgsql-relay-domains.cf
 transport_maps = pgsql:/etc/postfix/pgsql-transport-maps.cf
