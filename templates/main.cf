@@ -28,7 +28,7 @@ smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
 # information on enabling SSL in the smtp client.
 
 alias_maps = hash:/etc/aliases
-mynetworks = 127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128 240.0.0.0/24
+mynetworks_style = subnet
 
 # Set your domain here
 mydestination =
