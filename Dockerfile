@@ -1,6 +1,7 @@
 FROM alpine:3
 
 EXPOSE 25 80
+VOLUME /etc/letsencrypt/live
 
 RUN apk add --update --no-cache \
     # To generate Postfix TLS certificate:
