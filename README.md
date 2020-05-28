@@ -25,3 +25,16 @@ Setting     | Description
 
 Used by and made for [Kloügle](https://github.com/arugifa/klougle), the Google
 alternative automated with [Terraform](https://www.terraform.io/).
+
+
+## Troubleshooting
+
+If you don't receive emails from SimpleLogin, have a look to Postfix logs:
+```sh
+docker logs -f <POSTFIX_CONTAINER>
+```
+
+If Postfix doesn't seem to use TLS, have a look to Certbot logs:
+```sh
+docker exec -ti <POSTFIX_CONTAINER> tail -n 50 -f /var/log/letsencrypt/letsencrypt.log
+```

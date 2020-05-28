@@ -13,7 +13,7 @@ RUN apk add --update --no-cache \
 
 # Copy sources.
 ADD generate_config.py /src/
-ADD scripts/certbot-renew-crontab.sh /etc/periodic/hourly/renew-postfix-tls.sh
+ADD scripts/certbot-renew-crontab.sh /etc/periodic/hourly/renew-postfix-tls
 ADD scripts/certbot-renew-posthook.sh /etc/letsencrypt/renewal-hooks/post/reload-postfix.sh
 ADD templates /src/templates
 
