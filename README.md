@@ -20,6 +20,7 @@ Setting     | Description
 **EMAIL_HANDLER_HOST** | Where is hosted your SimpleLogin email handler instance.
 **LETSENCRYPT_EMAIL** | Email address used by Let's Encrypt, to send you expiry notices\*.
 **POSTFIX_FQDN** | Fully Qualified Domain Name of your Postfix instance (i.e., the MX server address you configured in your DNS zone for your **ALIASES_DEFAULT_DOMAIN**).
+**RELAY_HOST** | Optional next-hop destination for non-local mail
 
 \* automatic renewal is managed with [Certbot](https://certbot.eff.org/) and shouldn't fail, unless you have reached Let's Encrypt [rate limits](https://letsencrypt.org/docs/rate-limits/)
 
