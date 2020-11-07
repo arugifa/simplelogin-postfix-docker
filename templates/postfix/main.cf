@@ -72,3 +72,7 @@ smtpd_recipient_restrictions =
    reject_rbl_client bl.spamcop.net,
    permit
 
+{% if relay %}
+#Set mail relay host
+relayhost = {{ env['RELAY_HOST'] }}
+{% endif %}
