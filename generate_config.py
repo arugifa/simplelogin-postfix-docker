@@ -55,13 +55,11 @@ def generate_postfix_config():
             key_file = LETSENCRYPT_CONFIG_DIR / postfix_fqdn / LETSENCRYPT_PRIVATE_KEY
 
             enable_tls = cert_file.is_file() and key_file.is_file()
-            enable_relay = "RELAY_HOST" in environ
 
             # Generate config file.
             f.write(template.render(
                 env=environ,
                 tls=enable_tls,
-                relay=enable_relay,
                 tls_cert=cert_file,
                 tls_key=key_file,
             ))

@@ -12,6 +12,7 @@ services:
       LETSENCRYPT_EMAIL: support@mydomain.com
       EMAIL_HANDLER_HOST: 127.0.0.1
       POSTFIX_FQDN: mail.mydomain.com
+      RELAY_HOST: myisp.internet.com
 
   sut:
     image: alpine:latest
