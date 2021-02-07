@@ -1,0 +1,15 @@
+name: Build docker image
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  lint:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: brpaz/hadolint-action@v1.2.1
+        with:
+          dockerfile: Dockerfile
