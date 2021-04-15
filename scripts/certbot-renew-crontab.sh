@@ -5,7 +5,7 @@ CERTIFICATE="/etc/letsencrypt/live/$POSTFIX_FQDN/fullchain.pem"
 PRIVATE_KEY="/etc/letsencrypt/live/$POSTFIX_FQDN/privkey.pem"
 
 if [ -f $CERTIFICATE -a -f $PRIVATE_KEY ]; then
-    certbot -n renew
+    certbot -q renew
 else
-    certbot -n certonly
+    certbot -q certonly
 fi
